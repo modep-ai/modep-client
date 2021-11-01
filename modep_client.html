@@ -41,7 +41,177 @@
 </div>
 <div class="section" id="module-modep_client.modep_client">
 <span id="modep-client-modep-client-module"></span><h2>modep_client.modep_client module<a class="headerlink" href="#module-modep_client.modep_client" title="Permalink to this headline">¶</a></h2>
-<p>Main module.</p>
+<p>Client for modep API, Swagger docs are at <a class="reference external" href="https://modep.ai/v1/api-docs">https://modep.ai/v1/api-docs</a></p>
+<dl class="class">
+<dt id="modep_client.modep_client.FlightTask">
+<em class="property">class </em><code class="descclassname">modep_client.modep_client.</code><code class="descname">FlightTask</code><span class="sig-paren">(</span><em>client</em>, <em>response</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#FlightTask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.FlightTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="modep_client.modep_client.FlightTask.result">
+<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#FlightTask.result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.FlightTask.result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="modep_client.modep_client.ModepClient">
+<em class="property">class </em><code class="descclassname">modep_client.modep_client.</code><code class="descname">ModepClient</code><span class="sig-paren">(</span><em>api_key</em>, <em>url='https://modep.ai/v1/'</em>, <em>ensure_https=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.auth_header">
+<code class="descname">auth_header</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.auth_header"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.auth_header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.automl_flight">
+<code class="descname">automl_flight</code><span class="sig-paren">(</span><em>framework_names</em>, <em>train_ids</em>, <em>test_ids</em>, <em>target</em>, <em>max_runtime_seconds</em>, <em>experiment_id=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.automl_flight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.automl_flight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.automl_predict">
+<code class="descname">automl_predict</code><span class="sig-paren">(</span><em>framework_id</em>, <em>dataset_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.automl_predict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.automl_predict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.automl_train">
+<code class="descname">automl_train</code><span class="sig-paren">(</span><em>framework_name</em>, <em>train_ids</em>, <em>test_ids</em>, <em>target</em>, <em>max_runtime_seconds</em>, <em>experiment_id=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.automl_train"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.automl_train" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.delete_dataset">
+<code class="descname">delete_dataset</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.delete_dataset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.delete_dataset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.delete_flight">
+<code class="descname">delete_flight</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.delete_flight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.delete_flight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.delete_framework_run">
+<code class="descname">delete_framework_run</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.delete_framework_run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.delete_framework_run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.download_openml_task">
+<code class="descname">download_openml_task</code><span class="sig-paren">(</span><em>task_id=168909</em>, <em>max_folds=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.download_openml_task"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.download_openml_task" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://openml.github.io/openml-python/develop/examples/30_extended/task_manual_iteration_tutorial.html">https://openml.github.io/openml-python/develop/examples/30_extended/task_manual_iteration_tutorial.html</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.get_dataset">
+<code class="descname">get_dataset</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.get_dataset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.get_dataset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.get_flight">
+<code class="descname">get_flight</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.get_flight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.get_flight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.get_framework_output">
+<code class="descname">get_framework_output</code><span class="sig-paren">(</span><em>id</em>, <em>target_dir</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.get_framework_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.get_framework_output" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.get_framework_predictions">
+<code class="descname">get_framework_predictions</code><span class="sig-paren">(</span><em>predictions_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.get_framework_predictions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.get_framework_predictions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.get_framework_run">
+<code class="descname">get_framework_run</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.get_framework_run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.get_framework_run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.list_datasets">
+<code class="descname">list_datasets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.list_datasets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.list_datasets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.list_flights">
+<code class="descname">list_flights</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.list_flights"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.list_flights" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.list_framework_info">
+<code class="descname">list_framework_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.list_framework_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.list_framework_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.list_framework_runs">
+<code class="descname">list_framework_runs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.list_framework_runs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.list_framework_runs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.login">
+<code class="descname">login</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.login"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.login" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.print_framework_log">
+<code class="descname">print_framework_log</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.print_framework_log"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.print_framework_log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.response_exception">
+<code class="descname">response_exception</code><span class="sig-paren">(</span><em>resp</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.response_exception"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.response_exception" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.stop_flight">
+<code class="descname">stop_flight</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.stop_flight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.stop_flight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.stop_framework_run">
+<code class="descname">stop_framework_run</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.stop_framework_run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.stop_framework_run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.upload_dataset">
+<code class="descname">upload_dataset</code><span class="sig-paren">(</span><em>dset</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.upload_dataset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.upload_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upload a tabular dataset.
+Inputs:</p>
+<blockquote>
+<div>dest: either a string path or a pd.DataFrame.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.upload_dataset_from_df">
+<code class="descname">upload_dataset_from_df</code><span class="sig-paren">(</span><em>df</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.upload_dataset_from_df"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.upload_dataset_from_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upload a tabular dataset from a DataFrame.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="modep_client.modep_client.ModepClient.wait_for_flight">
+<code class="descname">wait_for_flight</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#ModepClient.wait_for_flight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.ModepClient.wait_for_flight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="modep_client.modep_client.PredictTask">
+<em class="property">class </em><code class="descclassname">modep_client.modep_client.</code><code class="descname">PredictTask</code><span class="sig-paren">(</span><em>client</em>, <em>response</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#PredictTask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.PredictTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="modep_client.modep_client.PredictTask.result">
+<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#PredictTask.result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.PredictTask.result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="modep_client.modep_client.TrainTask">
+<em class="property">class </em><code class="descclassname">modep_client.modep_client.</code><code class="descname">TrainTask</code><span class="sig-paren">(</span><em>client</em>, <em>response</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#TrainTask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.TrainTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="modep_client.modep_client.TrainTask.result">
+<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/modep_client.html#TrainTask.result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.modep_client.TrainTask.result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="module-modep_client">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-modep_client" title="Permalink to this headline">¶</a></h2>
