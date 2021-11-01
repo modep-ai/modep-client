@@ -1,0 +1,26 @@
+{
+  "template": "https://github.com/modep-ai/cookiecutter-pypackage.git",
+  "commit": "44691bc65b5ee1201f1e931f7f60d5ca6c160ea8",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "full_name": "modep-ai",
+      "email": "contact@modep.ai",
+      "github_username": "modep-ai",
+      "project_name": "modep-client",
+      "project_slug": "modep_client",
+      "project_short_description": "Python client for the modep API",
+      "pypi_username": "jimgoo",
+      "version": "0.0.1",
+      "use_pytest": "y",
+      "use_black": "y",
+      "use_pypi_deployment_with_travis": "n",
+      "add_pyup_badge": "n",
+      "command_line_interface": "No command-line interface",
+      "create_author_file": "y",
+      "open_source_license": "MIT license",
+      "_template": "https://github.com/modep-ai/cookiecutter-pypackage.git"
+    }
+  },
+  "directory": null
+}
