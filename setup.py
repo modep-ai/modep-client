@@ -10,7 +10,11 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [ ]
+requirements = [
+    "pandas==1.2.4",
+    "requests==2.25.1",
+    "requests-toolbelt==0.9.1",
+]
 
 test_requirements = ['pytest>=3', ]
 
@@ -38,7 +42,7 @@ setup(
     packages=find_packages(include=['modep_client', 'modep_client.*']),
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/modep-ai/modep_client',
+    url='https://github.com/modep-ai/modep-client',
     version='0.0.1',
     zip_safe=False,
 )
