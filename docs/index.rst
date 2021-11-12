@@ -1,5 +1,5 @@
 Welcome to modep-client's documentation!
-======================================
+========================================
 
 .. toctree::
    :maxdepth: 2
