@@ -178,12 +178,12 @@
 <span class="sd">        :param str id: The id of the dataset</span>
 <span class="sd">        :return: A dictionary containing information on the deletion</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;datasets/tabular/&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
-        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sess</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">auth_header</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;datasets/tabular/&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">sess</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">auth_header</span><span class="p">())</span>
         <span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">response_exception</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>            </div></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">response_exception</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>            </div></div>
 </pre></div>
 
            </div>

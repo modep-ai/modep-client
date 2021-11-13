@@ -74,7 +74,7 @@
   <h1>Source code for modep_client.tasks</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">time</span>
 
-<span class="n">INCOMPLETE_STATES</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;CREATED&quot;</span><span class="p">,</span> <span class="s2">&quot;STARTING&quot;</span><span class="p">,</span> <span class="s2">&quot;RUNNING&quot;</span><span class="p">])</span>
+<span class="n">INCOMPLETE_STATUSES</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;CREATED&quot;</span><span class="p">,</span> <span class="s2">&quot;STARTING&quot;</span><span class="p">,</span> <span class="s2">&quot;RUNNING&quot;</span><span class="p">])</span>
 
 
 <div class="viewcode-block" id="BaseTask"><a class="viewcode-back" href="../../modep_client.html#modep_client.tasks.BaseTask">[docs]</a><span class="k">class</span> <span class="nc">BaseTask</span><span class="p">:</span>
@@ -83,7 +83,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">get_method</span> <span class="o">=</span> <span class="n">get_method</span>
 
 <div class="viewcode-block" id="BaseTask.result"><a class="viewcode-back" href="../../modep_client.html#modep_client.tasks.BaseTask.result">[docs]</a>    <span class="k">def</span> <span class="nf">result</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">INCOMPLETE_STATES</span><span class="p">:</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">INCOMPLETE_STATUSES</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_method</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">])</span>
             <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">response</span></div></div>

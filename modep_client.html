@@ -93,6 +93,116 @@
 <div class="section" id="module-modep_client.automl">
 <span id="modep-client-automl-module"></span><h2>modep_client.automl module<a class="headerlink" href="#module-modep_client.automl" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
+<dt id="modep_client.automl.FrameworkFlights">
+<em class="property">class </em><code class="descclassname">modep_client.automl.</code><code class="descname">FrameworkFlights</code><span class="sig-paren">(</span><em>client: modep_client.client.Client</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/automl.html#FrameworkFlights"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.automl.FrameworkFlights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Initialize the FrameworkFlights class. A Flight is a set of AutoML 
+frameworks trained on the same data for comparison purposes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>client</strong> – A <a class="reference internal" href="#modep_client.client.Client" title="modep_client.client.Client"><code class="xref py py-class docutils literal notranslate"><span class="pre">modep_client.client.Client</span></code></a> object</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="modep_client.automl.FrameworkFlights.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/automl.html#FrameworkFlights.delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.automl.FrameworkFlights.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a flight by id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A dictionary containing deletion information</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="modep_client.automl.FrameworkFlights.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/automl.html#FrameworkFlights.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.automl.FrameworkFlights.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a flight by id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A dictionary containing the flight</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="modep_client.automl.FrameworkFlights.list">
+<code class="descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/automl.html#FrameworkFlights.list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.automl.FrameworkFlights.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all flights</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> containing the flights</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="modep_client.automl.FrameworkFlights.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/automl.html#FrameworkFlights.stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.automl.FrameworkFlights.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop a flight by id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A dictionary containing stopping information</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="modep_client.automl.FrameworkFlights.train">
+<code class="descname">train</code><span class="sig-paren">(</span><em>framework_names: List[str], train_ids: Union[str, List[str]], test_ids: Union[str, List[str]], target: str, max_runtime_seconds: int</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/automl.html#FrameworkFlights.train"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.automl.FrameworkFlights.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a job to train an AutoML framework flight.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>framework_names</strong> (<em>list</em>) – The names of the frameworks to train</li>
+<li><strong>train_ids</strong> (<em>list</em>) – The ids of the dataset(s) to train on</li>
+<li><strong>test_ids</strong> (<em>list</em>) – The ids of the dataset(s) to test on</li>
+<li><strong>target</strong> (<em>str</em>) – The name of the target column</li>
+<li><strong>max_runtime_seconds</strong> (<em>int</em>) – The maximum amount of time in seconds to train per dataset(s)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A <a class="reference internal" href="#modep_client.tasks.BaseTask" title="modep_client.tasks.BaseTask"><code class="xref py py-class docutils literal notranslate"><span class="pre">modep_client.tasks.BaseTask</span></code></a> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="modep_client.automl.FrameworkFlights.wait">
+<code class="descname">wait</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/automl.html#FrameworkFlights.wait"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.automl.FrameworkFlights.wait" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait for a flight to finish while printing out a DataFrame of the results</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>str</em>) – The id of the flight to wait for</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="modep_client.automl.Frameworks">
 <em class="property">class </em><code class="descclassname">modep_client.automl.</code><code class="descname">Frameworks</code><span class="sig-paren">(</span><em>client: modep_client.client.Client</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/automl.html#Frameworks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.automl.Frameworks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -132,6 +242,25 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>str</em>) – The id of the training run</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dictionary containing the training run</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="modep_client.automl.Frameworks.get_output">
+<code class="descname">get_output</code><span class="sig-paren">(</span><em>framework_id</em>, <em>target_dir=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/automl.html#Frameworks.get_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.automl.Frameworks.get_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the output files generated by the AutoML training run.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>framework_id</strong> (<em>str</em>) – The id of the training run</li>
+<li><strong>target_dir</strong> (<em>str</em>) – The local directory to download the files to. If None,
+the files are downloaded to a temp directory.</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -182,11 +311,6 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="modep_client.automl.Frameworks.output">
-<code class="descname">output</code><span class="sig-paren">(</span><em>id</em>, <em>target_dir</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/automl.html#Frameworks.output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.automl.Frameworks.output" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="modep_client.automl.Frameworks.predict">
 <code class="descname">predict</code><span class="sig-paren">(</span><em>framework_id</em>, <em>dataset_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/automl.html#Frameworks.predict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.automl.Frameworks.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start a job to get predictions from an AutoML framework on a new dataset</p>
@@ -194,9 +318,31 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>framework_id</strong> (<em>str</em>) – The id of the framework to use</li>
 <li><strong>dataset_id</strong> (<em>str</em>) – The id of the dataset to predict on</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A <a class="reference internal" href="#modep_client.tasks.BaseTask" title="modep_client.tasks.BaseTask"><code class="xref py py-class docutils literal notranslate"><span class="pre">modep_client.tasks.BaseTask</span></code></a> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="modep_client.automl.Frameworks.print_log">
+<code class="descname">print_log</code><span class="sig-paren">(</span><em>framework_id</em>, <em>target_dir=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/automl.html#Frameworks.print_log"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.automl.Frameworks.print_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the logs generated by the AutoML training run.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>framework_id</strong> (<em>str</em>) – The id of the training run</li>
+<li><strong>target_dir</strong> (<em>str</em>) – The local directory to download the files to. If None,
+the files are downloaded to a temp directory.</li>
 </ul>
 </td>
 </tr>
@@ -228,7 +374,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>framework_name</strong> (<em>str</em>) – The name of the framework (ie. AutoGluon, AutoGluon_bestquality,
 autosklearn, autosklearn2, AutoWEKA, constantpredictor, DecisionTree, flaml, GAMA, H2OAutoML,
 hyperoptsklearn, mljarsupervised, mljarsupervised_compete, MLNet, RandomForest, TPOT, TunedRandomForest)</li>
@@ -237,6 +383,9 @@ hyperoptsklearn, mljarsupervised, mljarsupervised_compete, MLNet, RandomForest, 
 <li><strong>target</strong> (<em>str</em>) – The name of the target column in the training dataset(s)</li>
 <li><strong>max_runtime_seconds</strong> (<em>int</em>) – The maximum amount of time in seconds to train per dataset(s)</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A <a class="reference internal" href="#modep_client.tasks.BaseTask" title="modep_client.tasks.BaseTask"><code class="xref py py-class docutils literal notranslate"><span class="pre">modep_client.tasks.BaseTask</span></code></a> object</p>
 </td>
 </tr>
 </tbody>
@@ -280,7 +429,7 @@ hyperoptsklearn, mljarsupervised, mljarsupervised_compete, MLNet, RandomForest, 
 
 <dl class="method">
 <dt id="modep_client.client.Client.response_exception">
-<code class="descname">response_exception</code><span class="sig-paren">(</span><em>responce</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/client.html#Client.response_exception"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.client.Client.response_exception" title="Permalink to this definition">¶</a></dt>
+<code class="descname">response_exception</code><span class="sig-paren">(</span><em>response</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/client.html#Client.response_exception"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.client.Client.response_exception" title="Permalink to this definition">¶</a></dt>
 <dd><p>Raise an exception from a response</p>
 </dd></dl>
 
