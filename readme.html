@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>README &mdash; modep-client 0.0.1 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>modep-client &mdash; modep-client 0.0.1 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -39,6 +39,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">modep_client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authors.html">Credits</a></li>
@@ -59,7 +60,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>README</li>
+      <li>modep-client</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/readme.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -69,24 +70,24 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="readme">
-<h1>README<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="modep-client">
+<h1>modep-client<a class="headerlink" href="#modep-client" title="Permalink to this headline">¶</a></h1>
 <a class="reference external image-reference" href="https://pypi.org/project/modep-client"><img alt="https://img.shields.io/pypi/v/modep-client.svg" src="https://img.shields.io/pypi/v/modep-client.svg" /></a>
 <a class="reference external image-reference" href="https://github.com/modep-ai/modep-client/actions"><img alt="https://github.com/modep-ai/modep-client/actions/workflows/tests.yml/badge.svg" src="https://github.com/modep-ai/modep-client/actions/workflows/tests.yml/badge.svg" /></a>
 <a class="reference external image-reference" href="https://modep-ai.github.io/modep-client"><img alt="https://github.com/modep-ai/modep-client/actions/workflows/docs.yml/badge.svg" src="https://github.com/modep-ai/modep-client/actions/workflows/docs.yml/badge.svg" /></a>
 <p>Python client for the modep API. Run flights of AutoML frameworks:</p>
 <ul class="simple">
-<li>[AutoGluon](<a class="reference external" href="https://auto.gluon.ai">https://auto.gluon.ai</a>): Amazons’s version of AutoML</li>
-<li>[auto-sklearn](<a class="reference external" href="https://www.automl.org/automl/auto-sklearn/">https://www.automl.org/automl/auto-sklearn/</a>): the most popular by GitHub stars, winner of ChaLearn competition</li>
-<li>[auto-sklearn 2.0](<a class="reference external" href="https://www.automl.org/auto-sklearn-2-0-the-next-generation/">https://www.automl.org/auto-sklearn-2-0-the-next-generation/</a>): newer version 2.0 of the above</li>
-<li>[Auto-WEKA](<a class="reference external" href="https://www.cs.ubc.ca/labs/beta/Projects/autoweka/">https://www.cs.ubc.ca/labs/beta/Projects/autoweka/</a>): one of the oldest, but it’s a JAR if you’re into that</li>
-<li>[FLAML](<a class="reference external" href="https://github.com/microsoft/FLAML">https://github.com/microsoft/FLAML</a>): Microsoft version of AutoML</li>
-<li>[GAMA](<a class="reference external" href="https://github.com/PGijsbers/gama">https://github.com/PGijsbers/gama</a>): AutoML project from OpenML</li>
-<li>[H2O AutoML](<a class="reference external" href="https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html">https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html</a>): by H2O.ai</li>
-<li>[hyperopt-sklearn](<a class="reference external" href="http://hyperopt.github.io/hyperopt-sklearn/">http://hyperopt.github.io/hyperopt-sklearn/</a>): uses hyperopt to search scikit-learn models</li>
-<li>[mljar-supervised](<a class="reference external" href="https://supervised.mljar.com/">https://supervised.mljar.com/</a>): a JAR that does AutoML</li>
-<li>[MLNet](<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/machine-learning/reference/ml-net-cli-reference">https://docs.microsoft.com/en-us/dotnet/machine-learning/reference/ml-net-cli-reference</a>): command line AutoML tool by Microsoft</li>
-<li>[TPOT](<a class="reference external" href="https://github.com/EpistasisLab/tpot">https://github.com/EpistasisLab/tpot</a>): optimizes scikit-learn pipelines using genetic programming</li>
+<li>AutoGluon: <a class="reference external" href="https://auto.gluon.ai">https://auto.gluon.ai</a>: Amazons’s version of AutoML with new stacking</li>
+<li>auto-sklearn: <a class="reference external" href="https://www.automl.org/automl/auto-sklearn/">https://www.automl.org/automl/auto-sklearn/</a>:  automatic sklearn pipelines</li>
+<li>auto-sklearn 2.0: <a class="reference external" href="https://www.automl.org/auto-sklearn-2-0-the-next-generation/">https://www.automl.org/auto-sklearn-2-0-the-next-generation/</a>: added portfolios</li>
+<li>Auto-WEKA: <a class="reference external" href="https://www.cs.ubc.ca/labs/beta/Projects/autoweka/">https://www.cs.ubc.ca/labs/beta/Projects/autoweka/</a>: a JAR if you’re into that</li>
+<li>FLAML: <a class="reference external" href="https://github.com/microsoft/FLAML">https://github.com/microsoft/FLAML</a>: Microsoft’s version of AutoML - Fast and Lightweight AutoML</li>
+<li>GAMA: <a class="reference external" href="https://github.com/PGijsbers/gama">https://github.com/PGijsbers/gama</a>: AutoML project from OpenML (same authors of AutoML benchmarks <a class="reference external" href="https://github.com/openml/automlbenchmark">https://github.com/openml/automlbenchmark</a>)</li>
+<li>H2O AutoML: <a class="reference external" href="https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html">https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html</a>: by H2O.ai - $100M Series E 🚀</li>
+<li>hyperopt-sklearn: <a class="reference external" href="http://hyperopt.github.io/hyperopt-sklearn/">http://hyperopt.github.io/hyperopt-sklearn/</a>: uses hyperopt to search sklearn pipelines</li>
+<li>mljar-supervised: <a class="reference external" href="https://supervised.mljar.com/">https://supervised.mljar.com/</a>: a JAR that does AutoML</li>
+<li>MLNet: <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/machine-learning/reference/ml-net-cli-reference">https://docs.microsoft.com/en-us/dotnet/machine-learning/reference/ml-net-cli-reference</a>: command line AutoML by Microsoft</li>
+<li>TPOT: <a class="reference external" href="https://github.com/EpistasisLab/tpot">https://github.com/EpistasisLab/tpot</a>: optimizes sklearn pipelines using genetic programming</li>
 </ul>
 <p>In addition, the following non-AutoML baseline frameworks are available for comparison:</p>
 <ul class="simple">
@@ -95,6 +96,7 @@
 <li>Random Forest: scikit-learn Random Forest with default parameters except <cite>n_estimators = 2000</cite></li>
 <li>Tuned Random Forest: above with tuned <cite>max_features</cite> parameter</li>
 </ul>
+<p>For these you can get predictions on new data and any saved figures generated during training.</p>
 <p>To add new frameworks, add PRs to: <a class="reference external" href="https://github.com/openml/automlbenchmark">https://github.com/openml/automlbenchmark</a></p>
 <p>Latest release documentation: <a class="reference external" href="https://modep-ai.github.io/modep-client">https://modep-ai.github.io/modep-client</a></p>
 </div>
