@@ -104,9 +104,9 @@ class Datasets:
         :param str id: The id of the dataset
         :return: A dictionary containing information on the deletion
         """
-        url = self.url + "datasets/tabular/" + str(dataset_id)
-        resp = self.sess.delete(url, headers=self.auth_header())
+        url = self.client.url + "datasets/tabular/" + str(dataset_id)
+        resp = self.client.sess.delete(url, headers=self.client.auth_header())
         if resp.ok:
             return resp.json()
         else:
-            self.response_exception(resp)            
+            self.client.response_exception(resp)            

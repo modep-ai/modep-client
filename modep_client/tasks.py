@@ -1,6 +1,6 @@
 import time
 
-INCOMPLETE_STATES = set(["CREATED", "STARTING", "RUNNING"])
+INCOMPLETE_STATUSES = set(["CREATED", "STARTING", "RUNNING"])
 
 
 class BaseTask:
@@ -9,7 +9,7 @@ class BaseTask:
         self.get_method = get_method
 
     def result(self):
-        while self.response["status"] in INCOMPLETE_STATES:
+        while self.response["status"] in INCOMPLETE_STATUSES:
             self.response = self.get_method(self.response["id"])
             time.sleep(5)
         return self.response

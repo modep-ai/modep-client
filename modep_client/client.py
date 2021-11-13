@@ -25,7 +25,7 @@ class Client(object):
 
         self.login()
 
-    def response_exception(self, responce):
+    def response_exception(self, response):
         """ Raise an exception from a response """
 
         raise Exception(
