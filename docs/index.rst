@@ -4,11 +4,9 @@
    :maxdepth: 2
    :caption: Contents:
 
-   ..
-      readme
+
    installation
-   ..
-      usage
+   usage
    modules
    contributing
    authors
