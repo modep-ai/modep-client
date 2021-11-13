@@ -1,8 +1,8 @@
-.. highlight:: shell
-
 ============
 README
 ============
+
+![https://pypi.org/project/modep-client](https://img.shields.io/pypi/v/modep-client.svg)
 
 .. image:: https://img.shields.io/pypi/v/modep-client.svg
         :target: https://pypi.org/project/modep-client
@@ -35,6 +35,3 @@ In addition, the following non-AutoML baseline frameworks are available for comp
 To add new frameworks, add PRs to: https://github.com/openml/automlbenchmark
   
 Latest release documentation: https://modep-ai.github.io/modep-client
-
-
-
