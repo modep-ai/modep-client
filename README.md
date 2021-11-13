@@ -6,13 +6,13 @@
 
 Python client for the modep API. Run flights of AutoML frameworks:
 
-- [AutoGluon](https://auto.gluon.ai): Amazons's version of AutoML
-- [auto-sklearn](https://www.automl.org/automl/auto-sklearn/): the most popular by GitHub stars, winner of ChaLearn competition
-- [auto-sklearn 2.0](https://www.automl.org/auto-sklearn-2-0-the-next-generation/): newer version 2.0 of the above
-- [Auto-WEKA](https://www.cs.ubc.ca/labs/beta/Projects/autoweka/): one of the oldest, but it's a JAR if you're into that
-- [FLAML](https://github.com/microsoft/FLAML): Microsoft version of AutoML
-- [GAMA](https://github.com/PGijsbers/gama): AutoML project from OpenML
-- [H2O AutoML](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html): by H2O.ai
+- [AutoGluon](https://auto.gluon.ai): Amazons's version of AutoML, much stacking
+- [auto-sklearn](https://www.automl.org/automl/auto-sklearn/): most popular by GitHub stars, winner of ChaLearn competition
+- [auto-sklearn 2.0](https://www.automl.org/auto-sklearn-2-0-the-next-generation/): portfolios of good models
+- [Auto-WEKA](https://www.cs.ubc.ca/labs/beta/Projects/autoweka/): one of the oldest but a JAR if you're into that
+- [FLAML](https://github.com/microsoft/FLAML): Microsoft's python AutoML
+- [GAMA](https://github.com/PGijsbers/gama): AutoML project from OpenML and the creators of https://github.com/openml/automlbenchmark 
+- [H2O AutoML](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html): H2O.ai AutoML ($100M Series E 🚀)
 - [hyperopt-sklearn](http://hyperopt.github.io/hyperopt-sklearn/): uses hyperopt to search scikit-learn models
 - [mljar-supervised](https://supervised.mljar.com/): a JAR that does AutoML
 - [MLNet](https://docs.microsoft.com/en-us/dotnet/machine-learning/reference/ml-net-cli-reference): command line AutoML tool by Microsoft
