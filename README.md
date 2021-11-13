@@ -1,7 +1,7 @@
-# README
+#README
 
-![https://github.com/modep-ai/modep-client/actions/workflows/docs.yml/badge.svg](https://modep-ai.github.io/modep-client)
-![https://github.com/modep-ai/modep-client/actions/workflows/tests.yml/badge.svg](https://github.com/modep-ai/modep-client/actions)
+![https://modep-ai.github.io/modep-client](https://github.com/modep-ai/modep-client/actions/workflows/docs.yml/badge.svg)
+![https://github.com/modep-ai/modep-client/actions](https://github.com/modep-ai/modep-client/actions/workflows/tests.yml/badge.svg)
 ![https://pypi.org/project/modep-client](https://img.shields.io/pypi/v/modep-client.svg)
 
 Python client for the modep API. Run flights of AutoML frameworks:
