@@ -16,3 +16,37 @@ Connect to the API and upload a dataset::
   train_dset = datasets.upload(df_train, 'titanic_train')
   test_dset = datasets.upload(df_test, 'titanic_test')
 
+
+Train all tabular models on the dataset for a max of 30 minutes each::
+    
+  from modep_client.automl import FrameworkFlights
+
+  flights = FrameworkFlights(client)
+
+  frameworks = [
+     'AutoGluon',
+     'AutoGluon_bestquality',
+     'autosklearn',
+     'autosklearn2',
+     'AutoWEKA',
+     'constantpredictor',
+     'DecisionTree',
+     'flaml',
+     'GAMA',
+     'H2OAutoML',
+     'hyperoptsklearn',
+     'mljarsupervised',
+     'mljarsupervised_compete',
+     'MLNet',
+     'RandomForest',
+     'TPOT',
+     'TunedRandomForest',
+  ]
+
+  # starts the training
+  flight_job = flights.train(frameworks, train_dset['id'], test_dset['id'], 'survived', 60*30)
+
+  # waits for training to complete
+  flight = flight_job.result()
+
+  

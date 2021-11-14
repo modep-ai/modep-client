@@ -88,6 +88,38 @@
 <span class="n">test_dset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="n">df_test</span><span class="p">,</span> <span class="s1">&#39;titanic_test&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Train all tabular models on the dataset for a max of 30 minutes each:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">modep_client.automl</span> <span class="kn">import</span> <span class="n">FrameworkFlights</span>
+
+<span class="n">flights</span> <span class="o">=</span> <span class="n">FrameworkFlights</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+<span class="n">frameworks</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="s1">&#39;AutoGluon&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;AutoGluon_bestquality&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;autosklearn&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;autosklearn2&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;AutoWEKA&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;constantpredictor&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;DecisionTree&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;flaml&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;GAMA&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;H2OAutoML&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;hyperoptsklearn&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;mljarsupervised&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;mljarsupervised_compete&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;MLNet&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;RandomForest&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;TPOT&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;TunedRandomForest&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># starts the training</span>
+<span class="n">flight_job</span> <span class="o">=</span> <span class="n">flights</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">frameworks</span><span class="p">,</span> <span class="n">train_dset</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span> <span class="n">test_dset</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span> <span class="s1">&#39;survived&#39;</span><span class="p">,</span> <span class="mi">60</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># waits for training to complete</span>
+<span class="n">flight</span> <span class="o">=</span> <span class="n">flight_job</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 
 
