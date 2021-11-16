@@ -1,9 +1,10 @@
 import copy
 import logging
 import os
-import pandas as pd
 import tempfile
 from typing import Union
+
+import pandas as pd
 from requests_toolbelt import MultipartEncoder
 
 from modep_client.client import Client

@@ -1,13 +1,14 @@
 import glob
 import io
 import logging
-import pandas as pd
-from typing import Union, List
 import tempfile
 import zipfile
+from typing import List, Union
+
+import pandas as pd
 
 from modep_client.client import Client
-from modep_client.tasks import BaseTask, INCOMPLETE_STATUSES
+from modep_client.tasks import INCOMPLETE_STATUSES, BaseTask
 
 logger = logging.getLogger(__name__)
 
@@ -332,7 +333,8 @@ class FrameworkFlights:
         :param str id: The id of the flight to wait for
         """
         import time
-        from IPython.display import display, HTML, clear_output
+
+        from IPython.display import HTML, clear_output, display
 
         while True:
             flight = self.get(id)
