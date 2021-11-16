@@ -17,7 +17,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Contributing" href="contributing.html" />
-    <link rel="prev" title="modep_client" href="modules.html" /> 
+    <link rel="prev" title="Usage" href="usage.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,16 +42,13 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">modep_client</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">modep_client package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-modep_client.automl">modep_client.automl module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-modep_client.client">modep_client.client module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-modep_client.datasets">modep_client.datasets module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-modep_client.tasks">modep_client.tasks module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-modep_client">Module contents</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">modep_client package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-modep_client.automl">modep_client.automl module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-modep_client.client">modep_client.client module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-modep_client.datasets">modep_client.datasets module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-modep_client.tasks">modep_client.tasks module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-modep_client">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
@@ -73,7 +70,6 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">modep_client</a> &raquo;</li>
       <li>modep_client package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/modep_client.rst.txt" rel="nofollow"> View page source</a>
@@ -95,7 +91,7 @@
 <dt id="modep_client.automl.FrameworkFlights">
 <em class="property">class </em><code class="descclassname">modep_client.automl.</code><code class="descname">FrameworkFlights</code><span class="sig-paren">(</span><em>client: modep_client.client.Client</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/automl.html#FrameworkFlights"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.automl.FrameworkFlights" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Initialize the FrameworkFlights class. A Flight is a set of AutoML 
+<p>Initialize the FrameworkFlights class. A Flight is a set of AutoML
 frameworks trained on the same data for comparison purposes.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -498,13 +494,20 @@ hyperoptsklearn, mljarsupervised, mljarsupervised_compete, MLNet, RandomForest, 
 
 <dl class="method">
 <dt id="modep_client.datasets.Datasets.upload">
-<code class="descname">upload</code><span class="sig-paren">(</span><em>dset: Union[str, pandas.core.frame.DataFrame], name: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/datasets.html#Datasets.upload"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.datasets.Datasets.upload" title="Permalink to this definition">¶</a></dt>
+<code class="descname">upload</code><span class="sig-paren">(</span><em>dset: Union[str, pandas.core.frame.DataFrame], name: str, target: str = None, categorical_target: bool = True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/datasets.html#Datasets.upload"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.datasets.Datasets.upload" title="Permalink to this definition">¶</a></dt>
 <dd><p>Upload a tabular dataset.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dset</strong> (str or <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>) – either a path to CSV or a DataFrame containing the data</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dset</strong> (str or <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>) – either a path to a CSV file or DataFrame containing the data</li>
+<li><strong>name</strong> (<em>str</em>) – A name to give the dataset (ie. <cite>titanic-train</cite> or <cite>titanic-test</cite>)</li>
+<li><strong>target</strong> (<em>str</em><em> or </em><em>None</em>) – Optionally specify a target column for the dataset</li>
+<li><strong>categorical_target</strong> (<em>bool</em>) – <cite>True</cite> if the specified <cite>target</cite> column is categorical
+(for classification), otherwise set this to <cite>False</cite> for regression.</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -537,7 +540,7 @@ hyperoptsklearn, mljarsupervised, mljarsupervised_compete, MLNet, RandomForest, 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="modules.html" class="btn btn-neutral float-left" title="modep_client" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
