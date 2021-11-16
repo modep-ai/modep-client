@@ -20,12 +20,13 @@ class Datasets:
         """
         self.client = client
 
-    def upload(self,
-               dset: Union[str, pd.DataFrame],
-               name: str,
-               target: str = None,
-               categorical_target: bool = True,
-               ):
+    def upload(
+        self,
+        dset: Union[str, pd.DataFrame],
+        name: str,
+        target: str = None,
+        categorical_target: bool = True,
+    ):
         """
         Upload a tabular dataset.
 
@@ -121,4 +122,4 @@ class Datasets:
         if resp.ok:
             return resp.json()
         else:
-            self.client.response_exception(resp)            
+            self.client.response_exception(resp)

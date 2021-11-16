@@ -37,7 +37,7 @@ class Frameworks:
                 df = df[list(js[0].keys())].set_index("framework_name")
             return df
         else:
-            self.client.response_exception(resp)        
+            self.client.response_exception(resp)
 
     def list(self):
         """
@@ -103,7 +103,7 @@ class Frameworks:
     def get(self, id: str):
         """
         Get an AutoML training run by id
-        
+
         :param str id: The id of the training run
         :return: A dictionary containing the training run
         """
@@ -216,13 +216,13 @@ class Frameworks:
             print(logtxt)
         else:
             raise Exception("Could not find log file")
-        return logfile            
+        return logfile
 
 
 class FrameworkFlights:
     def __init__(self, client: Client):
         """
-        Initialize the FrameworkFlights class. A Flight is a set of AutoML 
+        Initialize the FrameworkFlights class. A Flight is a set of AutoML
         frameworks trained on the same data for comparison purposes.
 
         :param client: A :class:`modep_client.client.Client` object
@@ -270,7 +270,7 @@ class FrameworkFlights:
     def list(self):
         """
         List all flights
-        
+
         :return: A :class:`pandas.DataFrame` containing the flights
         """
         url = self.client.url + "frameworks/tabular/flight"
