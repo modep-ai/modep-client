@@ -6,7 +6,7 @@
    
    installation
    usage
-   modules
+   modep_client
    contributing
    authors
    history

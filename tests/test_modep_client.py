@@ -72,3 +72,9 @@ def test_train(client):
     logger.info(flight)
 
     assert flight['status'] == 'SUCCESS'
+    
+    datasets.delete(train_id)
+    datasets.delete(test_id)
+    dsets = datasets.list()
+    assert train_name not in dsets.name.values
+    assert test_name not in dsets.name.values

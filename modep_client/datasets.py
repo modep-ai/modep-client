@@ -20,12 +20,22 @@ class Datasets:
         """
         self.client = client
 
-    def upload(self, dset: Union[str, pd.DataFrame], name: str):
+    def upload(self,
+               dset: Union[str, pd.DataFrame],
+               name: str,
+               target: str = None,
+               categorical_target: bool = True,
+               ):
         """
         Upload a tabular dataset.
 
-        :param dset: either a path to CSV or a DataFrame containing the data
+        :param dset: either a path to a CSV file or DataFrame containing the data
         :type dset: str or :class:`pandas.DataFrame`
+        :param str name: A name to give the dataset (ie. `titanic-train` or `titanic-test`)
+        :param target: Optionally specify a target column for the dataset
+        :type target: str or None
+        :param bool categorical_target: `True` if the specified `target` column is categorical
+            (for classification), otherwise set this to `False` for regression.
         """
 
         if isinstance(dset, str):
@@ -53,6 +63,8 @@ class Datasets:
                     "path": os.path.abspath(path),
                     "name": name,
                     "file": (path, f, "text/csv/h5"),
+                    "target": target,
+                    "categorical_target": str(categorical_target),
                 }
             )
             headers.update(
