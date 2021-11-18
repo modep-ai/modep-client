@@ -241,7 +241,12 @@ class FrameworkFlights:
         """
         Start a job to train an AutoML framework flight.
 
-        :param list framework_names: The names of the frameworks to train
+        :param framework_names: A list of framework names to train. If empty, then all
+            frameworks are trained. Use :class:`modep_client.frameworks.Frameworks.info()`
+            to get a list of available frameworks. Available ones are AutoGluon, AutoGluon_bestquality,
+            autosklearn, autosklearn2, AutoWEKA, constantpredictor, DecisionTree, flaml, GAMA, H2OAutoML,
+            hyperoptsklearn, mljarsupervised, mljarsupervised_compete, MLNet, RandomForest, TPOT, TunedRandomForest.
+        :type framework_names: str or list of str
         :param list train_ids: The ids of the dataset(s) to train on
         :param list test_ids: The ids of the dataset(s) to test on
         :param str target: The name of the target column
@@ -251,6 +256,7 @@ class FrameworkFlights:
 
         url = self.client.url + "frameworks/tabular/flight"
 
+        # convert train_ids and test_ids to lists if they are not already
         train_ids = [train_ids] if isinstance(train_ids, str) else train_ids
         test_ids = [test_ids] if isinstance(test_ids, str) else test_ids
 
