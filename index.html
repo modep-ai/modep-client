@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>modep-client &mdash; modep-client 0.0.1 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Welcome to modep-client’s documentation! &mdash; modep-client 0.0.1 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -16,7 +16,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="installation.html" /> 
+    <link rel="next" title="modep-client" href="readme.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,6 +39,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">modep-client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modep_client.html">modep_client package</a></li>
@@ -61,7 +62,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>modep-client</li>
+      <li>Welcome to modep-client’s documentation!</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -71,51 +72,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="modep-client">
-<h1>modep-client<a class="headerlink" href="#modep-client" title="Permalink to this headline">¶</a></h1>
-<a class="reference external image-reference" href="https://modep-ai.github.io/modep-client"><img alt="https://github.com/modep-ai/modep-client/actions/workflows/docs.yml/badge.svg" src="https://github.com/modep-ai/modep-client/actions/workflows/docs.yml/badge.svg" /></a>
-<a class="reference external image-reference" href="https://github.com/modep-ai/modep-client/actions"><img alt="https://github.com/modep-ai/modep-client/actions/workflows/tests.yml/badge.svg" src="https://github.com/modep-ai/modep-client/actions/workflows/tests.yml/badge.svg" /></a>
-<a class="reference external image-reference" href="https://pypi.org/project/modep-client"><img alt="https://img.shields.io/pypi/v/modep-client.svg" src="https://img.shields.io/pypi/v/modep-client.svg" /></a>
-<p>Python client for the modep API. All open-source tabular AutoML frameworks through one unified REST API.</p>
-<p>Installation:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install modep-client</span>
-</pre></div>
-</div>
-<p>Available frameworks:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://auto.gluon.ai/">AutoGluon</a>: Amazons’s version of AutoML with lots of stacking</li>
-<li><a class="reference external" href="https://www.automl.org/automl/auto-sklearn/">auto-sklearn</a>: automatic sklearn pipelines from NIPS 2015</li>
-<li><a class="reference external" href="https://www.automl.org/auto-sklearn-2-0-the-next-generation/">auto-sklearn 2</a>: new version for 2020 that added portfolios</li>
-<li><a class="reference external" href="https://www.cs.ubc.ca/labs/beta/Projects/autoweka/">Auto-WEKA</a>: AutoML in a JAR if you’re into that</li>
-<li><a class="reference external" href="https://github.com/microsoft/FLAML/">FLAML</a>: one of Microsoft’s version of AutoML (Fast and Lightweight AutoML)</li>
-<li><a class="reference external" href="https://github.com/PGijsbers/gama/">GAMA</a>: AutoML project from OpenML, from the authors of the AutoML benchmarking library used here</li>
-<li><a class="reference external" href="https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html">H2O AutoML</a>: free version of H2O.ai AutoML</li>
-<li><a class="reference external" href="http://hyperopt.github.io/hyperopt-sklearn/">hyperopt-sklearn</a>: uses hyperopt to search sklearn pipelines</li>
-<li><a class="reference external" href="https://supervised.mljar.com/">mljar-supervised</a>: has several modes depending on how aggressively you want to search</li>
-<li><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/machine-learning/reference/ml-net-cli-reference/">MLNet</a>: command line AutoML by Microsoft</li>
-<li><a class="reference external" href="https://github.com/EpistasisLab/tpot/">TPOT</a>: optimizes sklearn pipelines using genetic programming, gives you back the code of the best pipeline</li>
-</ul>
-<p>In addition, the following non-AutoML baseline frameworks are available for comparison:</p>
-<ul class="simple">
-<li>Constant Predictor: predicts empirical target class probabilities for classification or the target median for regression</li>
-<li>Decision Tree: sklearn Decision Tree with default parameters</li>
-<li>Random Forest: sklearn Random Forest with default parameters except <code class="docutils literal notranslate"><span class="pre">n_estimators</span> <span class="pre">=</span> <span class="pre">2000</span></code></li>
-<li>Tuned Random Forest: above with tuned <code class="docutils literal notranslate"><span class="pre">max_features</span></code> parameter</li>
-</ul>
-<p>For all frameworks you can:</p>
-<ul class="simple">
-<li>Get predictions on new data</li>
-<li>Download anything saved during training like leaderboards, figures, and logs</li>
-</ul>
-<p>Helpful links</p>
-<ul class="simple">
-<li>For the latest documentation: <a class="reference external" href="https://modep-ai.github.io/modep-client">https://modep-ai.github.io/modep-client</a></li>
-<li>For the API’s Swagger docs: <a class="reference external" href="https://modep.ai/v1/api-docs">https://modep.ai/v1/api-docs</a></li>
-<li>To add new frameworks, make PRs to: <a class="reference external" href="https://github.com/openml/automlbenchmark">https://github.com/openml/automlbenchmark</a></li>
-</ul>
+  <div class="section" id="welcome-to-modep-client-s-documentation">
+<h1>Welcome to modep-client’s documentation!<a class="headerlink" href="#welcome-to-modep-client-s-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">modep-client</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#stable-release">Stable release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#from-sources">From sources</a></li>
@@ -150,21 +112,21 @@
 </li>
 </ul>
 </div>
+</div>
 <div class="section" id="indices-and-tables">
-<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
 <li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
 <li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
 </ul>
 </div>
-</div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="readme.html" class="btn btn-neutral float-right" title="modep-client" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

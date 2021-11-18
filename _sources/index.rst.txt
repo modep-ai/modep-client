@@ -1,9 +1,11 @@
-.. include:: ../README.rst
+Welcome to modep-client's documentation!
+========================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
    
+   readme
    installation
    usage
    modep_client
