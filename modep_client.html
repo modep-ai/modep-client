@@ -166,7 +166,11 @@ frameworks trained on the same data for comparison purposes.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>framework_names</strong> (<em>list</em>) – The names of the frameworks to train</li>
+<li><strong>framework_names</strong> (<em>str</em><em> or </em><em>list of str</em>) – A list of framework names to train. If empty, then all
+frameworks are trained. Use <code class="xref py py-class docutils literal notranslate"><span class="pre">modep_client.frameworks.Frameworks.info()</span></code>
+to get a list of available frameworks. Available ones are AutoGluon, AutoGluon_bestquality,
+autosklearn, autosklearn2, AutoWEKA, constantpredictor, DecisionTree, flaml, GAMA, H2OAutoML,
+hyperoptsklearn, mljarsupervised, mljarsupervised_compete, MLNet, RandomForest, TPOT, TunedRandomForest.</li>
 <li><strong>train_ids</strong> (<em>list</em>) – The ids of the dataset(s) to train on</li>
 <li><strong>test_ids</strong> (<em>list</em>) – The ids of the dataset(s) to test on</li>
 <li><strong>target</strong> (<em>str</em>) – The name of the target column</li>
@@ -522,10 +526,27 @@ hyperoptsklearn, mljarsupervised, mljarsupervised_compete, MLNet, RandomForest, 
 <dt id="modep_client.tasks.BaseTask">
 <em class="property">class </em><code class="descclassname">modep_client.tasks.</code><code class="descname">BaseTask</code><span class="sig-paren">(</span><em>response</em>, <em>get_method</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/tasks.html#BaseTask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.tasks.BaseTask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Initialize a task object, which monitors the status of a task.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>response</strong> (<em>dict</em>) – The initial response from the server</li>
+<li><strong>get_method</strong> (<em>function</em>) – The method to use to get the task status</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the final response from the server once the task is complete</p>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="modep_client.tasks.BaseTask.result">
 <code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/tasks.html#BaseTask.result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.tasks.BaseTask.result" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Get the result of the task. This will block until the task is complete.</p>
+</dd></dl>
 
 </dd></dl>
 

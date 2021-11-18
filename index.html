@@ -76,15 +76,20 @@
 <a class="reference external image-reference" href="https://modep-ai.github.io/modep-client"><img alt="https://github.com/modep-ai/modep-client/actions/workflows/docs.yml/badge.svg" src="https://github.com/modep-ai/modep-client/actions/workflows/docs.yml/badge.svg" /></a>
 <a class="reference external image-reference" href="https://github.com/modep-ai/modep-client/actions"><img alt="https://github.com/modep-ai/modep-client/actions/workflows/tests.yml/badge.svg" src="https://github.com/modep-ai/modep-client/actions/workflows/tests.yml/badge.svg" /></a>
 <a class="reference external image-reference" href="https://pypi.org/project/modep-client"><img alt="https://img.shields.io/pypi/v/modep-client.svg" src="https://img.shields.io/pypi/v/modep-client.svg" /></a>
-<p>Python client for the modep API. Run flights of AutoML frameworks and compare them all:</p>
+<p>Python client for the modep API. All open-source tabular AutoML frameworks through one unified REST API.</p>
+<p>Installation:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install modep-client</span>
+</pre></div>
+</div>
+<p>Available frameworks:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://auto.gluon.ai/">AutoGluon</a>: Amazons’s version of AutoML with lots of stacking</li>
 <li><a class="reference external" href="https://www.automl.org/automl/auto-sklearn/">auto-sklearn</a>: automatic sklearn pipelines from NIPS 2015</li>
 <li><a class="reference external" href="https://www.automl.org/auto-sklearn-2-0-the-next-generation/">auto-sklearn 2</a>: new version for 2020 that added portfolios</li>
-<li><a class="reference external" href="https://www.cs.ubc.ca/labs/beta/Projects/autoweka/">Auto-WEKA</a>: a JAR if you’re into that</li>
-<li><a class="reference external" href="https://github.com/microsoft/FLAML/">FLAML</a>: Microsoft’s version of AutoML - Fast and Lightweight AutoML</li>
+<li><a class="reference external" href="https://www.cs.ubc.ca/labs/beta/Projects/autoweka/">Auto-WEKA</a>: AutoML in a JAR if you’re into that</li>
+<li><a class="reference external" href="https://github.com/microsoft/FLAML/">FLAML</a>: one of Microsoft’s version of AutoML (Fast and Lightweight AutoML)</li>
 <li><a class="reference external" href="https://github.com/PGijsbers/gama/">GAMA</a>: AutoML project from OpenML, from the authors of the AutoML benchmarking library used here</li>
-<li><a class="reference external" href="https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html">H2O AutoML</a>: free version of H2O.ai, $100M Series E 🚀</li>
+<li><a class="reference external" href="https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html">H2O AutoML</a>: free version of H2O.ai AutoML</li>
 <li><a class="reference external" href="http://hyperopt.github.io/hyperopt-sklearn/">hyperopt-sklearn</a>: uses hyperopt to search sklearn pipelines</li>
 <li><a class="reference external" href="https://supervised.mljar.com/">mljar-supervised</a>: has several modes depending on how aggressively you want to search</li>
 <li><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/machine-learning/reference/ml-net-cli-reference/">MLNet</a>: command line AutoML by Microsoft</li>
@@ -94,10 +99,10 @@
 <ul class="simple">
 <li>Constant Predictor: predicts empirical target class probabilities for classification or the target median for regression</li>
 <li>Decision Tree: sklearn Decision Tree with default parameters</li>
-<li>Random Forest: sklearn Random Forest with default parameters except <cite>n_estimators = 2000</cite></li>
-<li>Tuned Random Forest: above with tuned <cite>max_features</cite> parameter</li>
+<li>Random Forest: sklearn Random Forest with default parameters except <code class="docutils literal notranslate"><span class="pre">n_estimators</span> <span class="pre">=</span> <span class="pre">2000</span></code></li>
+<li>Tuned Random Forest: above with tuned <code class="docutils literal notranslate"><span class="pre">max_features</span></code> parameter</li>
 </ul>
-<p>For all frameworks you can</p>
+<p>For all frameworks you can:</p>
 <ul class="simple">
 <li>Get predictions on new data</li>
 <li>Download anything saved during training like leaderboards, figures, and logs</li>
@@ -105,8 +110,8 @@
 <p>Helpful links</p>
 <ul class="simple">
 <li>For the latest documentation: <a class="reference external" href="https://modep-ai.github.io/modep-client">https://modep-ai.github.io/modep-client</a></li>
-<li>To add new frameworks, add PRs to: <a class="reference external" href="https://github.com/openml/automlbenchmark">https://github.com/openml/automlbenchmark</a></li>
 <li>For the API’s Swagger docs: <a class="reference external" href="https://modep.ai/v1/api-docs">https://modep.ai/v1/api-docs</a></li>
+<li>To add new frameworks, make PRs to: <a class="reference external" href="https://github.com/openml/automlbenchmark">https://github.com/openml/automlbenchmark</a></li>
 </ul>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>

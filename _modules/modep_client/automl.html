@@ -314,7 +314,12 @@
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Start a job to train an AutoML framework flight.</span>
 
-<span class="sd">        :param list framework_names: The names of the frameworks to train</span>
+<span class="sd">        :param framework_names: A list of framework names to train. If empty, then all</span>
+<span class="sd">            frameworks are trained. Use :class:`modep_client.frameworks.Frameworks.info()`</span>
+<span class="sd">            to get a list of available frameworks. Available ones are AutoGluon, AutoGluon_bestquality,</span>
+<span class="sd">            autosklearn, autosklearn2, AutoWEKA, constantpredictor, DecisionTree, flaml, GAMA, H2OAutoML,</span>
+<span class="sd">            hyperoptsklearn, mljarsupervised, mljarsupervised_compete, MLNet, RandomForest, TPOT, TunedRandomForest.</span>
+<span class="sd">        :type framework_names: str or list of str</span>
 <span class="sd">        :param list train_ids: The ids of the dataset(s) to train on</span>
 <span class="sd">        :param list test_ids: The ids of the dataset(s) to test on</span>
 <span class="sd">        :param str target: The name of the target column</span>
@@ -324,6 +329,7 @@
 
         <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;frameworks/tabular/flight&quot;</span>
 
+        <span class="c1"># convert train_ids and test_ids to lists if they are not already</span>
         <span class="n">train_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">train_ids</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">train_ids</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">train_ids</span>
         <span class="n">test_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">test_ids</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">test_ids</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">test_ids</span>
 
