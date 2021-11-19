@@ -408,7 +408,9 @@
 
 <div class="viewcode-block" id="FrameworkFlights.wait"><a class="viewcode-back" href="../../modep_client.html#modep_client.automl.FrameworkFlights.wait">[docs]</a>    <span class="k">def</span> <span class="nf">wait</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Wait for a flight to finish while printing out a DataFrame of the results</span>
+<span class="sd">        Wait for a flight to finish while printing out a DataFrame of the results.</span>
+<span class="sd">        This version is for running in a Jupyter notebook, for the terminal version,</span>
+<span class="sd">        see :func:`wait_terminal()`.</span>
 
 <span class="sd">        :param str id: The id of the flight to wait for</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -435,7 +437,37 @@
                 <span class="k">break</span>
 
             <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-            <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div></div>
+            <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FrameworkFlights.wait_terminal"><a class="viewcode-back" href="../../modep_client.html#modep_client.automl.FrameworkFlights.wait_terminal">[docs]</a>    <span class="k">def</span> <span class="nf">wait_terminal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Wait for a flight to finish while printing out a DataFrame of the results.</span>
+<span class="sd">        This version is for running in a terminal. Use :func:`wait()` if you are</span>
+<span class="sd">        running in a Jupyter notebook.</span>
+
+<span class="sd">        :param str id: The id of the flight to wait for</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">import</span> <span class="nn">time</span>
+
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">flight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+
+            <span class="c1"># make a DataFrame for the individual AutoML frameworks for this flight</span>
+            <span class="n">frameworks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">flight</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;frameworks&quot;</span><span class="p">,</span> <span class="p">[]))</span>
+
+            <span class="c1"># drop some columns for optimal viewing</span>
+            <span class="n">frameworks</span> <span class="o">=</span> <span class="n">frameworks</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
+                <span class="p">[</span><span class="s2">&quot;fold_results&quot;</span><span class="p">,</span> <span class="s2">&quot;fold_leaderboard&quot;</span><span class="p">,</span> <span class="s2">&quot;fold_model_txt&quot;</span><span class="p">],</span> <span class="mi">1</span>
+            <span class="p">)</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;flight status: </span><span class="si">{</span><span class="n">flight</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;flight members:&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">frameworks</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">flight</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">INCOMPLETE_STATUSES</span><span class="p">:</span>
+                <span class="k">break</span>
+
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span></div></div>
 </pre></div>
 
            </div>

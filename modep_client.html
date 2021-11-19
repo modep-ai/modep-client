@@ -189,7 +189,25 @@ hyperoptsklearn, mljarsupervised, mljarsupervised_compete, MLNet, RandomForest, 
 <dl class="method">
 <dt id="modep_client.automl.FrameworkFlights.wait">
 <code class="descname">wait</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/automl.html#FrameworkFlights.wait"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.automl.FrameworkFlights.wait" title="Permalink to this definition">¶</a></dt>
-<dd><p>Wait for a flight to finish while printing out a DataFrame of the results</p>
+<dd><p>Wait for a flight to finish while printing out a DataFrame of the results.
+This version is for running in a Jupyter notebook, for the terminal version,
+see <a class="reference internal" href="#modep_client.automl.FrameworkFlights.wait_terminal" title="modep_client.automl.FrameworkFlights.wait_terminal"><code class="xref py py-func docutils literal notranslate"><span class="pre">wait_terminal()</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>str</em>) – The id of the flight to wait for</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="modep_client.automl.FrameworkFlights.wait_terminal">
+<code class="descname">wait_terminal</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/modep_client/automl.html#FrameworkFlights.wait_terminal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#modep_client.automl.FrameworkFlights.wait_terminal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait for a flight to finish while printing out a DataFrame of the results.
+This version is for running in a terminal. Use <a class="reference internal" href="#modep_client.automl.FrameworkFlights.wait" title="modep_client.automl.FrameworkFlights.wait"><code class="xref py py-func docutils literal notranslate"><span class="pre">wait()</span></code></a> if you are
+running in a Jupyter notebook.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
