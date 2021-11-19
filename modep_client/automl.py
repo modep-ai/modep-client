@@ -334,7 +334,9 @@ class FrameworkFlights:
 
     def wait(self, id):
         """
-        Wait for a flight to finish while printing out a DataFrame of the results
+        Wait for a flight to finish while printing out a DataFrame of the results.
+        This version is for running in a Jupyter notebook, for the terminal version,
+        see :func:`wait_terminal()`.
 
         :param str id: The id of the flight to wait for
         """
@@ -362,3 +364,33 @@ class FrameworkFlights:
 
             time.sleep(5)
             clear_output(wait=True)
+
+    def wait_terminal(self, id):
+        """
+        Wait for a flight to finish while printing out a DataFrame of the results.
+        This version is for running in a terminal. Use :func:`wait()` if you are
+        running in a Jupyter notebook.
+
+        :param str id: The id of the flight to wait for
+        """
+        import time
+
+        while True:
+            flight = self.get(id)
+
+            # make a DataFrame for the individual AutoML frameworks for this flight
+            frameworks = pd.DataFrame(flight.pop("frameworks", []))
+
+            # drop some columns for optimal viewing
+            frameworks = frameworks.drop(
+                ["fold_results", "fold_leaderboard", "fold_model_txt"], 1
+            )
+
+            print(f"flight status: {flight['status']}")
+            print("flight members:")
+            print(frameworks)
+
+            if flight["status"] not in INCOMPLETE_STATUSES:
+                break
+
+            time.sleep(5)

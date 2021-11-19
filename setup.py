@@ -14,6 +14,7 @@ requirements = [
     "pandas==1.2.4",
     "requests==2.25.1",
     "requests-toolbelt==0.9.1",
+    "fire",
 ]
 
 test_requirements = ['pytest>=3', ]
